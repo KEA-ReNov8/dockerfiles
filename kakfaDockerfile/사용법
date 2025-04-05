@@ -1,0 +1,20 @@
+kafka-topics --bootstrap-server localhost:9092 --create --topic free-comment-notifications --partitions 1 --replication-factor 1
+토픽 생성하기. 파티션과 팩터는 환경에 맞게 수정하기
+
+kafka-console-producer --broker-list localhost:9092 --topic free-comment-notifications
+해당 토픽에 메세지 보내기 가능
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic free-comment-notifications --group free-notification-group
+해당 토픽에 대해 메세지 읽기 가능
+
+kafka-topics --bootstrap-server localhost:9092 --list
+토픽 리스트 보기
+
+kafka-consumer-groups --bootstrap-server localhost:9092 --group free-notification-group --describe
+토픽에 연결된 호스트 개수 보기
+
+kafka-topics --bootstrap-server localhost:9092 --delete --topic free-notification-group
+특정 토픽 삭제하기
+
+kafka-topics --bootstrap-server localhost:9092 --delete --topic test-*
+테스트가 붙은 토픽들 삭제하기
