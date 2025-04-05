@@ -1,3 +1,9 @@
+위의 docker-compose를 다운 받은 파일에 가서 [docker-compose up -d]로 실행시킨다.
+이후 docker exec -it kafka /bin/bash를 입력한다.
+만약 생성하고 메세지를 바로 보고 싶다면 서로 다른 터미널에서 /bin/bash에 진입한 뒤에 보내기 명령어를, 다른 터미널에서는 읽기 명령어를 실행한다.
+
+
+
 kafka-topics --bootstrap-server localhost:9092 --create --topic free-comment-notifications --partitions 1 --replication-factor 1
 토픽 생성하기. 파티션과 팩터는 환경에 맞게 수정하기
 
