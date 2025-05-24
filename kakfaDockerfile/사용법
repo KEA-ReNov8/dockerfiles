@@ -2,6 +2,8 @@
 이후 docker exec -it kafka /bin/bash를 입력한다.
 만약 생성하고 메세지를 바로 보고 싶다면 서로 다른 터미널에서 /bin/bash에 진입한 뒤에 보내기 명령어를, 다른 터미널에서는 읽기 명령어를 실행한다.
 
+카프카의 기본 토픽 전략은, 만약 메세지를 보낸 토픽이 존재하지 않으면 토픽이 생성된다고 함(By Gemini...)
+
 
 
 kafka-topics --bootstrap-server localhost:9092 --create --topic free-comment-notifications --partitions 1 --replication-factor 1
